@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лендинг Продукта</title>
+  <style>
+    :root {
+      --bg: #0b172a;
+      --card: #132238;
+      --accent: #5ad1e6;
+      --text: #e8f0ff;
+      --muted: #9db2ce;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #123, #0b172a 40%), #0b172a;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-weight: 700; letter-spacing: 0.04em; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+    nav a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #5ad1e6, #5d7bff);
+      color: #0b172a;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: none;
+    }
+    main { max-width: 1080px; margin: 0 auto; padding: 20px; }
+    .hero {
+      padding: 70px 0 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 { font-size: clamp(32px, 4vw, 48px); margin: 0 0 16px; }
+    .hero p { color: var(--muted); margin: 0 0 24px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .metrics .card { text-align: center; }
+    .metrics h3 { margin: 8px 0 4px; font-size: 22px; }
+    .metrics span { color: var(--muted); font-size: 13px; }
+    .features {
+      margin: 40px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .feature-title { font-weight: 700; margin: 0 0 8px; }
+    .feature-desc { color: var(--muted); margin: 0; }
+    .cta {
+      margin: 40px 0 60px;
+      padding: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(120deg, rgba(90, 209, 230, 0.12), rgba(93, 123, 255, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+    }
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NovaFlow</div>
+    <nav>
+      <a href="#benefits">Преимущества</a>
+      <a href="#features">Фичи</a>
+      <a href="#cta">Начать</a>
+    </nav>
+  </header>
+
+  <iframe src="https://picsiostage3.tsepelev.de/karol" style="width:100%; height:100%; border:none;"></iframe>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Запускайте продукты быстрее и без лишних блокеров</h1>
+        <p>NovaFlow помогает командам выкатить обновления за минуты, а не недели: авто-сборки, превью окружения и аналитика релизов.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn" href="#cta">Попробовать бесплатно</a>
+          <a class="btn secondary" href="#features">Узнать больше</a>
+        </div>
+      </div>
+      <div class="card" aria-label="Превью продукта">
+        <p style="margin:0 0 12px; color:var(--muted); font-size:14px;">Дашборд релиза</p>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; font-size:12px;">
+          <div class="card" style="padding:12px; box-shadow:none;">
+            <div style="font-weight:700;">14</div>
+            <div style="color:var(--muted);">деплоев / нед</div>
+          </div>
+          <div class="card" style="padding:12px; box-shadow:none;">
+            <div style="font-weight:700;">97%</div>
+            <div style="color:var(--muted);">авто-тестов</div>
+          </div>
+          <div class="card" style="padding:12px; box-shadow:none;">
+            <div style="font-weight:700;">~8 мин</div>
+            <div style="color:var(--muted);">до прод</div>
+          </div>
+        </div>
+        <div style="margin-top:14px; font-size:13px; color:var(--muted);">
+          Предсказуемые релизы с автоматическими откатами и алертами в Slack.
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="metrics">
+      <div class="card">
+        <h3>2х быстрее</h3>
+        <span>Сокращение цикла поставки после внедрения</span>
+      </div>
+      <div class="card">
+        <h3>−35% инцидентов</h3>
+        <span>Меньше ошибок благодаря превью окружениям</span>
+      </div>
+      <div class="card">
+        <h3>24/7 поддержка</h3>
+        <span>Живые инженеры, а не боты</span>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="card">
+        <div class="feature-title">Быстрые превью</div>
+        <p class="feature-desc">Каждый Pull Request получает своё окружение. Ссылка для продуктовых и QA.</p>
+      </div>
+      <div class="card">
+        <div class="feature-title">Контроль качества</div>
+        <p class="feature-desc">Авто-прогоны тестов, линтеры и визуальные снапшоты перед релизом.</p>
+      </div>
+      <div class="card">
+        <div class="feature-title">Наблюдаемость</div>
+        <p class="feature-desc">Метрики деплоев, алерты в Slack/Teams и удобные таймлайны событий.</p>
+      </div>
+      <div class="card">
+        <div class="feature-title">Безопасность</div>
+        <p class="feature-desc">Политики доступов, SSO и журналы действий команды по умолчанию.</p>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <div>
+        <div style="font-size:22px; font-weight:700;">Готовы ускорить релизы?</div>
+        <div style="color:var(--muted);">Запустите пилот за 10 минут и получите бесплатную консультацию.</div>
+      </div>
+      <a class="btn" href="mailto:hello@novaflow.io">Запросить демо</a>
+    </section>
+  </main>
+
+  <footer>
+    NovaFlow · Надёжные релизы без рутины · 2025
+  </footer>
+</body>
+</html>
