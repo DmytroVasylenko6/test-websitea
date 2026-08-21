@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "siteName": "Legal Inform",
+    "homeTitle": "IT services, web development and advertising",
+    "homeDescription": "LLC Legal Inform Service is a Diia.City resident. Web development, support, and ad placement.",
+    "servicesTitle": "Services",
+    "servicesDescription": "Websites and web apps, support, advertising campaigns, and SEO.",
+    "advertiseTitle": "Advertise with us",
+    "advertiseDescription": "Placement formats, indicative rates, and a media-sales enquiry.",
+    "portfolioTitle": "Portfolio",
+    "portfolioDescription": "Web development, advertising, and IT solution cases.",
+    "diiaTitle": "Diia.City and company details",
+    "diiaDescription": "Official details of LLC Legal Inform Service and Diia.City residency.",
+    "contactsTitle": "Contacts",
+    "contactsDescription": "Odesa address, phone, and contact form.",
+    "privacyTitle": "Privacy policy",
+    "termsTitle": "Terms of use",
+    "cookiesTitle": "Cookie policy"
+  },
+  "nav": {
+    "services": "Services",
+    "advertise": "Advertise",
+    "portfolio": "Portfolio",
+    "diia": "Diia.City",
+    "contacts": "Contacts",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "label": "Language",
+    "uk": "Українська",
+    "en": "English"
+  },
+  "footer": {
+    "requisites": "Company details",
+    "edrpou": "EDRPOU",
+    "resident": "Diia.City resident since {date}",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "badge": "Diia.City resident",
+    "heroTitle": "Web development, IT support, and advertising for business",
+    "heroLead": "LLC Legal Inform Service designs websites and products, keeps them running, and helps with digital advertising — including placement on our own properties.",
+    "ctaPrimary": "Send an enquiry",
+    "ctaSecondary": "View services",
+    "servicesTitle": "Services",
+    "servicesLead": "Two lines of work the company actually performs.",
+    "itCardTitle": "IT and web development",
+    "itCardBody": "Websites, web apps, APIs, UI/UX, and support.",
+    "adCardTitle": "Digital advertising",
+    "adCardBody": "Campaigns, targeting, search ads, banners, and SEO.",
+    "learnMore": "Learn more",
+    "advertiseTitle": "Advertise with us",
+    "advertiseLead": "Banner formats, native pieces, and special projects. Rates are indicative — we confirm terms after an enquiry. We do not publish invented traffic figures.",
+    "advertiseCta": "Formats and enquiry",
+    "portfolioTitle": "Portfolio",
+    "portfolioLead": "We only publish completed work with client permission. This section is still being filled in.",
+    "trustTitle": "Trust",
+    "trustResident": "Diia.City resident",
+    "trustKved": "NACE 63.12 — web portals",
+    "trustStack": "Next.js, TypeScript, accessibility",
+    "trustLegal": "Public company details and legal pages",
+    "ctaTitle": "Tell us what you need"
+  },
+  "services": {
+    "title": "Services",
+    "lead": "IT delivery and agency advertising are separate from on-site media placement.",
+    "itTitle": "IT and web development",
+    "itItems": [
+      "Websites and landing pages",
+      "Web applications and dashboards",
+      "APIs and integrations",
+      "UI/UX design",
+      "Technical support"
+    ],
+    "adTitle": "Digital advertising",
+    "adItems": [
+      "Ad account setup",
+      "Paid social targeting",
+      "Search advertising",
+      "Display campaigns",
+      "SEO support"
+    ],
+    "inventoryNote": "Placement on our properties is covered on Advertise — it is not an agency package."
+  },
+  "advertise": {
+    "title": "Ad placement",
+    "lead": "A media-sales brochure: formats, legal limits, and a budget estimate. This is not inventory booking and not a traffic report.",
+    "formatsTitle": "Formats",
+    "header": "Header",
+    "sidebar": "Sidebar",
+    "inArticle": "In-article",
+    "sticky": "Sticky",
+    "nativeTitle": "Native formats",
+    "nativeItems": [
+      "Native articles",
+      "PR publications",
+      "Special projects"
+    ],
+    "mediaKit": "Media Kit (PDF)",
+    "mediaKitDisabled": "File will be added",
+    "legalTitle": "Creative specs and prohibited topics",
+    "legalBody": "Creatives must match the stated size, must not include malware, and must comply with Ukraine’s Law on Advertising. We do not accept ads for weapons, tobacco, illegal substances, discriminatory content, misleading claims, or other topics restricted by law.",
+    "ratesTitle": "Indicative rates",
+    "ratesNote": "Amounts are preliminary and confirmed on request. The calculator is an estimate, not a contract.",
+    "cpm": "CPM",
+    "cpc": "CPC",
+    "fixedWeek": "Fixed week",
+    "uah": "UAH",
+    "calculatorTitle": "Estimate placement",
+    "impressions": "Impressions (indicative)",
+    "clicks": "Clicks (indicative)",
+    "weeks": "Weeks of fixed placement",
+    "estimate": "Indicative estimate",
+    "format": "Format"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "lead": "This portfolio is being filled in. Cases will include the brief, stack, and results — no invented clients.",
+    "empty": "No published cases yet.",
+    "filterAll": "All",
+    "web": "Web Development",
+    "advertising": "Advertising",
+    "it": "IT Solutions"
+  },
+  "diia": {
+    "title": "Diia.City and reporting",
+    "lead": "Official legal-entity facts. We do not claim critical-enterprise status until a corresponding order exists.",
+    "requisites": "Details",
+    "fullName": "Full legal name",
+    "edrpou": "EDRPOU code",
+    "director": "Director",
+    "address": "Registered address",
+    "registered": "State registration date",
+    "residentTitle": "Diia.City resident",
+    "residentBody": "The company has been on the Diia.City register since {date}. Confirmation comes from public registers, not a self-made certificate.",
+    "registryLink": "Diia.City portal",
+    "opendatabot": "OpenDataBot profile",
+    "docsTitle": "Public documents",
+    "docsLead": "Downloads will unlock when official files are available.",
+    "docPending": "Document will be added",
+    "compliance-initial": "Compliance report (initial)",
+    "compliance-annual": "Compliance report (annual)",
+    "audit-opinion": "Independent auditor’s opinion",
+    "charter": "Charter documents",
+    "register-extract": "Register extract"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "lead": "The registered address is also the business address unless stated otherwise.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "map": "Map",
+    "openMap": "Open in Google Maps",
+    "formTitle": "Write to us"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "requestType": "Request type",
+    "it": "IT services",
+    "advertising": "Advertising",
+    "partnership": "Partnership",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Thank you. We received your enquiry.",
+    "error": "Could not send the enquiry. Try later or call us.",
+    "unavailable": "Enquiries are temporarily disabled.",
+    "errors": {
+      "name": "Enter a name (at least 2 characters).",
+      "contact": "Provide a phone number or email.",
+      "email": "Invalid email.",
+      "phone": "Invalid phone number.",
+      "message": "Describe your request (at least 10 characters).",
+      "requestType": "Choose a request type."
+    }
+  },
+  "legal": {
+    "privacyTitle": "Privacy policy",
+    "privacyIntro": "This policy explains which personal data we collect through the website and why. The controller is {legalName}, EDRPOU {edrpou}.",
+    "dataTitle": "Data we process",
+    "dataBody": "Name, phone, email, message text, request type, and technical request data (time, IP for abuse limits). Necessary cookies: locale, theme, cookie consent.",
+    "telegramTitle": "Telegram",
+    "telegramBody": "Form submissions are delivered to an internal Telegram channel via a bot. Messages are read by authorised staff. Do not send passwords, payment details, or other secrets through the form.",
+    "rightsTitle": "Your rights",
+    "rightsBody": "You may request access, correction, or deletion under Ukraine’s Law on Personal Data Protection and, where applicable, the GDPR. Contact us by phone or by email if a public mailbox is published.",
+    "termsTitle": "Terms of use",
+    "termsBody": "This website is an information resource of LLC Legal Inform Service. Content is not a public offer unless stated. Indicative ad rates do not create an obligation to run a campaign. Do not attempt to break the site, send spam, or upload malware.",
+    "cookiesTitle": "Cookie policy",
+    "cookiesBody": "We use only necessary cookies: locale, theme, and your banner choice. This version does not include third-party analytics."
+  },
+  "cookies": {
+    "message": "We store only necessary cookies: language, theme, and this choice.",
+    "accept": "Got it",
+    "policy": "Details"
+  },
+  "jsonLd": {
+    "description": "IT services, web development, and advertising. Diia.City resident."
+  }
+}
