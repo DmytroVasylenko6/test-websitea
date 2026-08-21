@@ -131,7 +131,7 @@
   },
   "diia": {
     "title": "Diia.City and reporting",
-    "lead": "Official legal-entity facts. We do not claim critical-enterprise status until a corresponding order exists.",
+    "lead": "Official legal-entity facts.",
     "requisites": "Details",
     "fullName": "Full legal name",
     "edrpou": "EDRPOU code",
