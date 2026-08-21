@@ -1,5 +1,6 @@
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { LeadForm } from "@/components/lead-form";
+import { PageHero } from "@/components/page-hero";
 import { company, formatAddress, getMapsEmbedUrl, getMapsSearchUrl, getPublicEmail } from "@/config/company";
 import { buildPageMetadata } from "@/lib/pageMeta";
 
@@ -14,10 +15,10 @@ export default async function ContactsPage({ params }: { params: { locale: strin
 	const email = getPublicEmail();
 
 	return (
-		<div className="mx-auto max-w-6xl px-4 py-16">
-			<h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
-			<p className="mt-3 max-w-2xl text-muted-foreground">{t("lead")}</p>
-			<div className="mt-10 grid gap-10 lg:grid-cols-2">
+		<>
+			<PageHero title={t("title")} lead={t("lead")} variant="contacts" />
+			<div className="mx-auto max-w-6xl px-4 py-16">
+			<div className="grid gap-10 lg:grid-cols-2">
 				<div className="space-y-4 text-sm">
 					<div>
 						<p className="font-medium">{t("address")}</p>
@@ -60,6 +61,7 @@ export default async function ContactsPage({ params }: { params: { locale: strin
 					<LeadForm />
 				</div>
 			</div>
-		</div>
+			</div>
+		</>
 	);
 }

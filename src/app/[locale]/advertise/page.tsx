@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { AdCalculator } from "@/components/ad-calculator";
+import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { adFormats } from "@/config/company";
 import { buildPageMetadata } from "@/lib/pageMeta";
@@ -13,11 +14,10 @@ export default async function AdvertisePage({ params }: { params: { locale: stri
 	const t = await getTranslations("advertise");
 
 	return (
-		<div className="mx-auto max-w-6xl px-4 py-16">
-			<h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
-			<p className="mt-3 max-w-3xl text-muted-foreground">{t("lead")}</p>
-
-			<section className="mt-12">
+		<>
+			<PageHero title={t("title")} lead={t("lead")} variant="advertise" />
+			<div className="mx-auto max-w-6xl px-4 py-16">
+			<section>
 				<h2 className="text-xl font-semibold">{t("formatsTitle")}</h2>
 				<div className="mt-6 grid gap-4 sm:grid-cols-2">
 					{adFormats.map((format) => (
@@ -55,6 +55,7 @@ export default async function AdvertisePage({ params }: { params: { locale: stri
 					<AdCalculator />
 				</div>
 			</section>
-		</div>
+			</div>
+		</>
 	);
 }

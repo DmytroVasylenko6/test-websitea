@@ -1,5 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { PageHero } from "@/components/page-hero";
 import { PortfolioFilters } from "@/components/portfolio-filters";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/routing";
 import { buildPageMetadata } from "@/lib/pageMeta";
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
@@ -11,13 +14,23 @@ export default async function PortfolioPage({ params }: { params: { locale: stri
 	const t = await getTranslations("portfolio");
 
 	return (
-		<div className="mx-auto max-w-6xl px-4 py-16">
-			<h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
-			<p className="mt-3 max-w-2xl text-muted-foreground">{t("lead")}</p>
-			<PortfolioFilters />
-			<div className="mt-10 rounded-xl border border-dashed p-12 text-center text-muted-foreground">
-				{t("empty")}
+		<>
+			<PageHero
+				title={t("title")}
+				lead={t("lead")}
+				variant="portfolio"
+				action={
+					<Button asChild>
+						<Link href="/#lead">{t("cta")}</Link>
+					</Button>
+				}
+			/>
+			<div className="mx-auto max-w-6xl px-4 py-16">
+				<PortfolioFilters />
+				<div className="mt-10 rounded-xl border border-dashed p-12 text-center text-muted-foreground">
+					{t("empty")}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }

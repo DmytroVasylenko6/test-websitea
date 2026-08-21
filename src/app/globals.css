@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @layer base {
   :root {
     --background: 40 20% 97%;
@@ -54,5 +65,51 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  /* Reveal blocks start hidden so gsap can take over without a visible jump.
+     The gate is lifted by the component, by prefers-reduced-motion, or by the noscript style. */
+  [data-reveal="pending"] {
+    opacity: 0;
+  }
+
+  [data-reveal-variant="line"] {
+    transform-origin: left center;
+  }
+
+  [data-reveal="pending"][data-reveal-variant="line"] {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal="pending"] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Hero text entrance. The element gets its own compositing layer so the glyphs
+     are rasterised once and composited, instead of being redrawn at subpixel
+     offsets on every frame above the animated canvas — that redraw is what makes
+     the text shimmer. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-enter {
+      animation: hero-enter 560ms cubic-bezier(0.33, 1, 0.68, 1) both;
+      backface-visibility: hidden;
+      will-change: transform, opacity;
+    }
+
+    .hero-enter-1 {
+      animation-delay: 90ms;
+    }
+
+    .hero-enter-2 {
+      animation-delay: 180ms;
+    }
+
+    .hero-enter-3 {
+      animation-delay: 260ms;
+    }
   }
 }

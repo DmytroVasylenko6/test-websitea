@@ -67,6 +67,10 @@ export default async function LocaleLayout({
 	return (
 		<html lang={locale} suppressHydrationWarning className={geistSans.variable}>
 			<body className="flex min-h-screen flex-col font-sans">
+				<noscript>
+					{/* Reveal blocks are hidden by CSS until gsap runs; without scripts nothing would lift that gate. */}
+					<style>{`[data-reveal="pending"]{opacity:1 !important;transform:none !important;}`}</style>
+				</noscript>
 				<ThemeProvider>
 					<NextIntlClientProvider locale={locale} messages={messages}>
 						<JsonLd />

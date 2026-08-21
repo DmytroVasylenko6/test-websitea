@@ -1,6 +1,6 @@
 {
   "meta": {
-    "siteName": "Legal Inform",
+    "siteName": "Legal Inform Services",
     "homeTitle": "IT services, web development and advertising",
     "homeDescription": "LLC Legal Inform Service is a Diia.City resident. Web development, support, and ad placement.",
     "servicesTitle": "Services",
@@ -49,6 +49,8 @@
     "heroLead": "LLC Legal Inform Service designs websites and products, keeps them running, and helps with digital advertising — including placement on our own properties.",
     "ctaPrimary": "Send an enquiry",
     "ctaSecondary": "View services",
+    "bannerAria": "Demo page layout showing the ad slots: Header, Sidebar, In-article, Sticky.",
+    "bannerNote": "Demo layout of ad slots on our properties.",
     "servicesTitle": "Services",
     "servicesLead": "Two lines of work the company actually performs.",
     "itCardTitle": "IT and web development",
@@ -87,6 +89,7 @@
       "Display campaigns",
       "SEO support"
     ],
+    "cta": "Send an enquiry",
     "inventoryNote": "Placement on our properties is covered on Advertise — it is not an agency package."
   },
   "advertise": {
@@ -122,7 +125,8 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "lead": "This portfolio is being filled in. Cases will include the brief, stack, and results — no invented clients.",
+    "lead": "This portfolio is being filled in. Cases will include the brief, stack, and results.",
+    "cta": "Send an enquiry",
     "empty": "No published cases yet.",
     "filterAll": "All",
     "web": "Web Development",
@@ -166,6 +170,8 @@
     "phone": "Phone",
     "email": "Email",
     "message": "Message",
+    "phonePlaceholder": "+380671234567",
+    "emailPlaceholder": "you@company.com",
     "requestType": "Request type",
     "it": "IT services",
     "advertising": "Advertising",
@@ -175,6 +181,15 @@
     "success": "Thank you. We received your enquiry.",
     "error": "Could not send the enquiry. Try later or call us.",
     "unavailable": "Enquiries are temporarily disabled.",
+    "progressTitle": "Enquiry assembly",
+    "progressCounter": "Blocks ready: {done} of {total}",
+    "progressContact": "Phone or email",
+    "progressTarget": "Enquiry",
+    "progressHintIdle": "Start filling the form — the diagram follows along.",
+    "progressHintPending": "Next up: {field}.",
+    "progressHintReady": "Every block is ready — you can send it.",
+    "progressHintSent": "Enquiry sent. We will be in touch.",
+    "progressNote": "The diagram mirrors this form, it is not statistics.",
     "errors": {
       "name": "Enter a name (at least 2 characters).",
       "contact": "Provide a phone number or email.",
@@ -194,8 +209,10 @@
     "rightsTitle": "Your rights",
     "rightsBody": "You may request access, correction, or deletion under Ukraine’s Law on Personal Data Protection and, where applicable, the GDPR. Contact us by phone or by email if a public mailbox is published.",
     "termsTitle": "Terms of use",
+    "termsLead": "Clear rules for using this website and its informational materials.",
     "termsBody": "This website is an information resource of LLC Legal Inform Service. Content is not a public offer unless stated. Indicative ad rates do not create an obligation to run a campaign. Do not attempt to break the site, send spam, or upload malware.",
     "cookiesTitle": "Cookie policy",
+    "cookiesLead": "A transparent overview of the small amount of data stored in your browser.",
     "cookiesBody": "We use only necessary cookies: locale, theme, and your banner choice. This version does not include third-party analytics."
   },
   "cookies": {

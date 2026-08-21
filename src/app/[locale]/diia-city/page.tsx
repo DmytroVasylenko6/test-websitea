@@ -1,4 +1,5 @@
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
+import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { company, formatAddress, publicDocuments } from "@/config/company";
 import { buildPageMetadata } from "@/lib/pageMeta";
@@ -30,11 +31,10 @@ export default async function DiiaCityPage({ params }: { params: { locale: strin
 	];
 
 	return (
-		<div className="mx-auto max-w-6xl px-4 py-16">
-			<h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
-			<p className="mt-3 max-w-3xl text-muted-foreground">{t("lead")}</p>
-
-			<section className="mt-10 overflow-hidden rounded-xl border">
+		<>
+			<PageHero title={t("title")} lead={t("lead")} variant="diia" />
+			<div className="mx-auto max-w-6xl px-4 py-16">
+			<section className="overflow-hidden rounded-xl border">
 				<h2 className="border-b bg-muted/50 px-5 py-3 font-medium">{t("requisites")}</h2>
 				<dl>
 					{rows.map((row) => (
@@ -75,6 +75,7 @@ export default async function DiiaCityPage({ params }: { params: { locale: strin
 					))}
 				</ul>
 			</section>
-		</div>
+			</div>
+		</>
 	);
 }

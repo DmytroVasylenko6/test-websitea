@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { PageHero } from "@/components/page-hero";
 import { buildPageMetadata } from "@/lib/pageMeta";
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
@@ -10,9 +11,11 @@ export default async function CookiePolicyPage({ params }: { params: { locale: s
 	const t = await getTranslations("legal");
 
 	return (
-		<article className="mx-auto max-w-3xl px-4 py-16">
-			<h1 className="text-3xl font-semibold tracking-tight">{t("cookiesTitle")}</h1>
-			<p className="mt-4 text-sm text-muted-foreground">{t("cookiesBody")}</p>
-		</article>
+		<>
+			<PageHero title={t("cookiesTitle")} lead={t("cookiesLead")} variant="cookies" compact />
+			<article className="mx-auto max-w-3xl px-4 py-16">
+				<p className="text-sm leading-relaxed text-muted-foreground">{t("cookiesBody")}</p>
+			</article>
+		</>
 	);
 }

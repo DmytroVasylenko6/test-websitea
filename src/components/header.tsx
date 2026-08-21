@@ -2,12 +2,13 @@
 
 import { Menu, Phone, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { company } from "@/config/company";
 import { Link } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 
 const navItems = [
 	{ href: "/services" as const, key: "services" },
@@ -20,9 +21,22 @@ const navItems = [
 export function Header() {
 	const t = useTranslations("nav");
 	const [open, setOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const update = () => setScrolled(window.scrollY > 24);
+		update();
+		window.addEventListener("scroll", update, { passive: true });
+		return () => window.removeEventListener("scroll", update);
+	}, []);
 
 	return (
-		<header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
+		<header
+			className={cn(
+				"sticky top-0 z-40 border-b bg-background/90 backdrop-blur transition-shadow duration-300",
+				scrolled ? "shadow-sm" : "shadow-none",
+			)}
+		>
 			<a
 				href="#main"
 				className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"

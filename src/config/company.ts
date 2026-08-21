@@ -6,7 +6,7 @@ export type Kved = {
 };
 
 export const company = {
-	shortName: "Legal Inform",
+	shortName: "Legal Inform Services",
 	legalNameUk:
 		"ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ «ЛЕГАЛ ІНФОРМ ПОСЛУГИ»",
 	legalNameEn: 'LIMITED LIABILITY COMPANY "LEGAL INFORM SERVICE"',
