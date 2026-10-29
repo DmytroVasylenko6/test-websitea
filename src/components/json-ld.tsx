@@ -27,6 +27,7 @@ export async function JsonLd() {
 			addressCountry: company.address.countryCode,
 		},
 		areaServed: "UA",
+		sameAs: [company.opendatabotUrl],
 	};
 
 	return (

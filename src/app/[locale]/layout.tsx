@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ThemeProvider } from "@/components/theme-provider";
 import { company, getSiteUrl } from "@/config/company";
 import { routing, type Locale } from "@/i18n/routing";
+import { ogImageUrl, openGraphFor } from "@/lib/indexing";
 
 const geistSans = localFont({
 	src: "../fonts/GeistVF.woff",
@@ -41,11 +42,10 @@ export async function generateMetadata({
 		description: isEn
 			? "LLC Legal Inform Service. Web development, support, advertising. Diia.City resident."
 			: "ТОВ «ЛЕГАЛ ІНФОРМ ПОСЛУГИ». Веб-розробка, підтримка, реклама. Резидент Дія.City.",
-		openGraph: {
-			type: "website",
-			locale: isEn ? "en_US" : "uk_UA",
-			siteName: company.shortName,
-			url: siteUrl,
+		openGraph: openGraphFor(locale, siteUrl, siteUrl),
+		twitter: {
+			card: "summary_large_image",
+			images: [ogImageUrl(siteUrl)],
 		},
 	};
 }

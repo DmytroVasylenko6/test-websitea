@@ -24,8 +24,37 @@ describe("🤖 indexing metadata", () => {
 				"x-default": siteUrl,
 			},
 		});
-		expect(indexingMetadata("en", "/contacts", siteUrl).openGraph).toEqual({
+		expect(indexingMetadata("en", "/contacts", siteUrl).openGraph).toMatchObject({
 			url: `${siteUrl}/en/contacts`,
+		});
+	});
+
+	test("🤖 keeps siteName, type and locale on every page, not only the layout", () => {
+		const og = indexingMetadata("en", "/services", siteUrl).openGraph;
+		expect(og).toMatchObject({
+			type: "website",
+			locale: "en_US",
+			siteName: "Legal Inform Services",
+		});
+		expect(indexingMetadata("uk", "/services", siteUrl).openGraph).toMatchObject({
+			locale: "uk_UA",
+		});
+	});
+
+	test("🤖 points Open Graph and Twitter at the card on the canonical origin", () => {
+		const meta = indexingMetadata("uk", "/", siteUrl);
+		expect(meta.openGraph).toMatchObject({
+			images: [
+				expect.objectContaining({
+					url: `${siteUrl}/og-image.jpg`,
+					width: 1424,
+					height: 752,
+				}),
+			],
+		});
+		expect(meta.twitter).toMatchObject({
+			card: "summary_large_image",
+			images: [`${siteUrl}/og-image.jpg`],
 		});
 	});
 });
