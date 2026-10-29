@@ -1,26 +1,47 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
+import { Link, usePathname, routing, type Locale } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
+
+const shortLabel: Record<Locale, string> = {
+	uk: "УКР",
+	en: "EN",
+};
 
 export function LanguageSwitcher() {
 	const locale = useLocale();
-	const router = useRouter();
 	const pathname = usePathname();
 	const t = useTranslations("language");
 
-	const nextLocale = locale === "uk" ? "en" : "uk";
-
 	return (
-		<Button
-			type="button"
-			variant="ghost"
-			size="sm"
-			aria-label={t("label")}
-			onClick={() => router.replace(pathname, { locale: nextLocale })}
-		>
-			{nextLocale.toUpperCase()}
-		</Button>
+		<div className="flex items-center" role="group" aria-label={t("label")}>
+			{routing.locales.map((code) => {
+				const active = locale === code;
+				return (
+					<Button
+						key={code}
+						asChild
+						variant="ghost"
+						size="sm"
+						className={cn(
+							"px-2",
+							active ? "font-semibold text-foreground" : "text-muted-foreground",
+						)}
+					>
+						<Link
+							href={pathname}
+							locale={code}
+							hrefLang={code}
+							aria-current={active ? "true" : undefined}
+							aria-label={t(code)}
+						>
+							{shortLabel[code]}
+						</Link>
+					</Button>
+				);
+			})}
+		</div>
 	);
 }
