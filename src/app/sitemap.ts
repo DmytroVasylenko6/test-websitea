@@ -1,39 +1,21 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/config/company";
-
-const paths = [
-	"",
-	"/services",
-	"/advertise",
-	"/portfolio",
-	"/diia-city",
-	"/contacts",
-	"/privacy-policy",
-	"/terms",
-	"/cookie-policy",
-];
+import { indexablePages, pageLanguageAlternates } from "@/lib/indexing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const siteUrl = getSiteUrl();
 
-	return paths.flatMap((path) => [
-		{
-			url: `${siteUrl}${path}`,
-			alternates: {
-				languages: {
-					uk: `${siteUrl}${path}`,
-					en: `${siteUrl}/en${path}`,
-				},
+	return indexablePages.flatMap(({ path }) => {
+		const languages = pageLanguageAlternates(siteUrl, path);
+		return [
+			{
+				url: languages.uk,
+				alternates: { languages },
 			},
-		},
-		{
-			url: `${siteUrl}/en${path}`,
-			alternates: {
-				languages: {
-					uk: `${siteUrl}${path}`,
-					en: `${siteUrl}/en${path}`,
-				},
+			{
+				url: languages.en,
+				alternates: { languages },
 			},
-		},
-	]);
+		];
+	});
 }

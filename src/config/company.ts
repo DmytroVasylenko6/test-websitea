@@ -77,12 +77,54 @@ export function getPublicEmail(): string | null {
 	return email;
 }
 
-export function getSiteUrl(): string {
-	const url = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-	if (!url) {
-		return "http://localhost:3000";
+/** Origin Google should index. Stale hosts must not override this in production. */
+export const CANONICAL_SITE_URL = "https://web.legal-inform-service.com.ua";
+
+function normalizeOrigin(url: string): string {
+	return url.trim().replace(/\/$/, "");
+}
+
+function isBlockedIndexingHost(hostname: string): boolean {
+	const host = hostname.toLowerCase();
+	if (
+		host === "localhost" ||
+		host === "127.0.0.1" ||
+		host === "onrender.com" ||
+		host === "vercel.app"
+	) {
+		return true;
 	}
-	return url.replace(/\/$/, "");
+	return host.endsWith(".onrender.com") || host.endsWith(".vercel.app");
+}
+
+/** Production sitemap and canonicals only accept an https origin, not a page path. */
+function isIndexableOrigin(url: string): boolean {
+	let parsed: URL;
+	try {
+		parsed = new URL(url);
+	} catch {
+		return false;
+	}
+	if (parsed.protocol !== "https:") return false;
+	if (parsed.username || parsed.password || parsed.search || parsed.hash) return false;
+	if (parsed.pathname !== "/" && parsed.pathname !== "") return false;
+	return !isBlockedIndexingHost(parsed.hostname);
+}
+
+export function getSiteUrl(): string {
+	const configured = process.env.NEXT_PUBLIC_SITE_URL
+		? normalizeOrigin(process.env.NEXT_PUBLIC_SITE_URL)
+		: "";
+
+	if (process.env.NODE_ENV !== "production") {
+		return configured || "http://localhost:3000";
+	}
+
+	if (configured && isIndexableOrigin(configured)) {
+		return configured;
+	}
+
+	return CANONICAL_SITE_URL;
 }
 
 export function formatAddress(locale: "uk" | "en"): string {

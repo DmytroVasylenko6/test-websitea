@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { getSiteUrl } from "@/config/company";
+import { indexingMetadata, pathForTitle, type PageTitleKey } from "@/lib/indexing";
 
-const descriptions: Record<string, string> = {
+const descriptions = {
 	homeTitle: "homeDescription",
 	servicesTitle: "servicesDescription",
 	advertiseTitle: "advertiseDescription",
@@ -11,17 +13,18 @@ const descriptions: Record<string, string> = {
 	privacyTitle: "privacyTitle",
 	termsTitle: "termsTitle",
 	cookiesTitle: "cookiesTitle",
-};
+} as const satisfies Record<PageTitleKey, string>;
 
 export async function buildPageMetadata(
 	locale: string,
-	titleKey: keyof typeof descriptions,
+	titleKey: PageTitleKey,
 ): Promise<Metadata> {
 	const t = await getTranslations({ locale, namespace: "meta" });
 	const descriptionKey = descriptions[titleKey];
 
 	return {
-		title: t(titleKey as "homeTitle"),
-		description: t((descriptionKey ?? titleKey) as "homeDescription"),
+		title: t(titleKey),
+		description: t(descriptionKey),
+		...indexingMetadata(locale, pathForTitle(titleKey), getSiteUrl()),
 	};
 }
