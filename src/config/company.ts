@@ -77,8 +77,13 @@ export function getPublicEmail(): string | null {
 	return email;
 }
 
-/** Origin Google should index. Stale hosts must not override this in production. */
-export const CANONICAL_SITE_URL = "https://web.legal-inform-service.com.ua";
+/** Origin Google should index. The WordPress host and the old web subdomain must not override this. */
+export const CANONICAL_SITE_URL = "https://legal-inform-service.com.ua";
+
+const LEGACY_SITE_HOSTS = new Set([
+	"web.legal-inform-service.com.ua",
+	"www.legal-inform-service.com.ua",
+]);
 
 function normalizeOrigin(url: string): string {
 	return url.trim().replace(/\/$/, "");
@@ -94,7 +99,7 @@ function isBlockedIndexingHost(hostname: string): boolean {
 	) {
 		return true;
 	}
-	return host.endsWith(".onrender.com") || host.endsWith(".vercel.app");
+	return host.endsWith(".onrender.com") || host.endsWith(".vercel.app") || LEGACY_SITE_HOSTS.has(host);
 }
 
 /** Production sitemap and canonicals only accept an https origin, not a page path. */

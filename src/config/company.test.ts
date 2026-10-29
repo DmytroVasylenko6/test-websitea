@@ -48,23 +48,24 @@ describe("🤖 getSiteUrl", () => {
 		expect(getSiteUrl()).toBe("http://localhost:3000");
 	});
 
-	test("🤖 ignores Render, Vercel preview and localhost hosts in production", () => {
+	test("🤖 ignores stale hosts in production", () => {
 		setNodeEnv("production");
 		for (const configured of [
 			"https://legal-inform.onrender.com",
 			"https://ihor-site.vercel.app/",
 			"http://localhost:3000",
+			"https://web.legal-inform-service.com.ua",
+			"https://www.legal-inform-service.com.ua/",
 			"https://web.legal-inform-service.com.ua/services",
 		]) {
 			process.env.NEXT_PUBLIC_SITE_URL = configured;
 			expect(getSiteUrl()).toBe(CANONICAL_SITE_URL);
 		}
+		expect(CANONICAL_SITE_URL).toBe("https://legal-inform-service.com.ua");
 	});
 
 	test("🤖 uses an explicit https origin in production", () => {
 		setNodeEnv("production");
-		process.env.NEXT_PUBLIC_SITE_URL = "https://web.legal-inform-service.com.ua/";
-		expect(getSiteUrl()).toBe(CANONICAL_SITE_URL);
 		process.env.NEXT_PUBLIC_SITE_URL = "https://ads.legal-inform-service.com.ua/";
 		expect(getSiteUrl()).toBe("https://ads.legal-inform-service.com.ua");
 	});
