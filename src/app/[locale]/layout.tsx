@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { CookieBanner } from "@/components/cookie-banner";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
 						</main>
 						<Footer />
 						<CookieBanner />
+						<GoogleAnalytics />
 					</NextIntlClientProvider>
 				</ThemeProvider>
 			</body>

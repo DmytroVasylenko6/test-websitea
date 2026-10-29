@@ -203,7 +203,7 @@
     "privacyTitle": "Privacy policy",
     "privacyIntro": "This policy explains which personal data we collect through the website and why. The controller is {legalName}, EDRPOU {edrpou}.",
     "dataTitle": "Data we process",
-    "dataBody": "Name, phone, email, message text, request type, and technical request data (time, IP for abuse limits). Necessary cookies: locale, theme, cookie consent.",
+    "dataBody": "Name, phone, email, message text, request type, and technical request data (time, IP for abuse limits). Necessary cookies: locale, theme, cookie consent. If you accept analytics, Google Analytics receives the page address, browser type, and approximate location.",
     "telegramTitle": "Telegram",
     "telegramBody": "Form submissions are delivered to an internal Telegram channel via a bot. Messages are read by authorised staff. Do not send passwords, payment details, or other secrets through the form.",
     "rightsTitle": "Your rights",
@@ -213,11 +213,12 @@
     "termsBody": "This website is an information resource of LLC Legal Inform Service. Content is not a public offer unless stated. Indicative ad rates do not create an obligation to run a campaign. Do not attempt to break the site, send spam, or upload malware.",
     "cookiesTitle": "Cookie policy",
     "cookiesLead": "A transparent overview of the small amount of data stored in your browser.",
-    "cookiesBody": "We use only necessary cookies: locale, theme, and your banner choice. This version does not include third-party analytics."
+    "cookiesBody": "Necessary cookies store the interface language, theme, and your banner choice. Google Analytics 4 loads only after you agree: Google then receives the page address, browser details, and approximate location. If you choose necessary cookies only, the analytics script is not loaded."
   },
   "cookies": {
-    "message": "We store only necessary cookies: language, theme, and this choice.",
-    "accept": "Got it",
+    "message": "Necessary cookies store language, theme, and this choice. Google Analytics runs only if you agree.",
+    "necessary": "Necessary only",
+    "accept": "Accept analytics",
     "policy": "Details"
   },
   "jsonLd": {
